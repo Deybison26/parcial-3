@@ -1,0 +1,20 @@
+{% extends "paginaPrincipal.html" %}
+
+
+{% block content %}
+
+<form class="form-register" method="post">
+    {% csrf_token %}
+    <h4>Fromulario Registro</h4>
+    <input class="controls" type="text" name="Nombre_edificio" id="Nombre_edificio" placeholder="Nombre del Edificio">
+    <input class="controls" type="text" name="Apartamento" id="Apartamento" placeholder="Apartamento">
+    <input class="controls" type="text" name="Habitaciones" id="Habitaciones" placeholder="Habitaciones">
+    <input class="controls" type="text" name="Propietario" id="Propietario" placeholder="Nombre del Propietario">
+    <input class="controls" type="text" name="Baños" id="Baños" placeholder="Cuantos baños">
+    <p>Revisa bien los campos antes de registrar</p><!-- 
+    <input class="botons" type="submit" value="Registrar"> -->
+    <button class="botons" type="submit">Registrar Datos</button>
+</form>
+
+{% endblock %}
+    

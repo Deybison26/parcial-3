@@ -1,0 +1,18 @@
+{% extends "paginaPrincipal.html" %}
+
+
+{% block content %}
+
+<form action="{% url 'actualizar' modificarT.id %}"  method="POST" class="form-register">
+    {% csrf_token %}
+    <h4>Fromulario Registro</h4>
+    <input class="controls" type="text" name="Nombre_edificio" id="Nombre_edificio" value="{{modificarT.Nombre_edificio}}" >
+    <input class="controls" type="text" name="Apartamento" id="Apartamento" value="{{modificarT.Apartamento}}" >
+    <input class="controls" type="text" name="Habitaciones" id="Habitaciones" value="{{modificarT.Habitaciones}}" >
+    <input class="controls" type="text" name="Propietario" id="Propietario" value="{{modificarT.Propietario}}" >
+    <input class="controls" type="text" name="Baños" id="Baños" value="{{modificarT.Baños}}">
+    <p>Revisa bien los campos antes de registrar</p>
+    <button class="botons" type="submit">Actualizar Datos</button>
+</form>
+
+{% endblock %}

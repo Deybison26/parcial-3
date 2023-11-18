@@ -1,0 +1,39 @@
+{% extends "paginaPrincipal.html" %}
+
+
+{% block content %}
+<div class="container">
+    <table class="table">
+            
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre Edificio</th>
+                <th scope="col">Apartamento</th>
+                <th scope="col">Habitaciones</th>
+                <th scope="col">Propietario</th>
+                <th scope="col">Baños</th>
+                <th scope="col">MODIFICAR</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody class="atributes">
+            {% for p in list %}
+            <tr >
+                <th scope="row">{{p.id}}</th>
+                <td>{{p.Nombre_edificio}}</td>
+                <td>{{p.Apartamento}}</td>
+                <td>{{p.Habitaciones}}</td>
+                <td>{{p.Propietario}}</td>
+                <td>{{p.Baños}}</td>
+                <td><a type="button" class="btn btn-outline-secondary" href="{% url 'modificarTabla' p.id %}">Editar</a></td>
+                <td><a type="button" class="btn btn-outline-secondary" href="{% url 'eliminarTable' p.id %}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+</div>
+
+
+{% endblock %}
